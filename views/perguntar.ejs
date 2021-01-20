@@ -1,0 +1,28 @@
+<%- include('layout/header.ejs') %> <!-- Incluindo os arquivos do layout -->
+<%- include('layout/navbar.ejs') %>
+<div class="container"> <!--div principal container-->
+        <div class="card text-white bg-success formcard"> <!-- div card-->
+            <div class="card-header">
+                <h3>Realizar Pergunta</h3> 
+            </div><!--fim do card header-->
+            <div class="card-body">                
+                <form method="POST" action="/recebedados">
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Nome:</label>
+                        <input type="text" placeholder="Qual o seu nome?" name="nomePergunta" class="form-control">
+                        </div>
+                    <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Título da Pergunta</label>
+                    <input type="text" placeholder="Título da Pergunta" name="tituloPergunta" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Qual a sua pergunta?</label>
+                    <textarea placeholder="Qual a sua pergunta?" name="descricaoPergunta" class="form-control" ></textarea>
+                    </div>
+                    <button class="btn btn-primary">Perguntar</button>
+                </form>
+            </div> <!--fim do card body -->
+        </div> <!-- final do card-->
+
+    </div> <!-- fecha a div principal container -->
+<%- include('layout/footer.ejs') %>

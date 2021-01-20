@@ -1,0 +1,41 @@
+<%- include('layout/header.ejs') %> <!-- Incluindo os arquivos do layout -->
+<%- include('layout/navbar.ejs') %>
+<div class="container">
+    <a href="/perguntar" class="btn btn-success">Fazer Pergunta</a>
+        <div class="card">
+            <h5 class="card-header">Feita por: <%= pergunta.usuario %></h5>
+            <div class="card-body">
+              <h5 class="card-title"><%= pergunta.titulo %></h5>
+              <p class="card-text"><%= pergunta.descricao %></p>
+              <div class="card text-white bg-success formcard"> <!-- div card-->
+                <div class="card-header">
+                    <h3>Resposta:</h3> 
+                </div><!--fim do card header-->
+                <div class="card-body">                
+                    <form method="POST" action="/salvaresposta">
+                        <div class="mb-3">
+                            <label  class="form-label">Nome:</label>
+                            <input type="text" placeholder="Qual o seu nome?" name="nomeResposta" class="form-control">
+                            </div>
+                         <div class="mb-3">
+                        <label  class="form-label">Resposta:</label>
+                        <textarea placeholder="Resposta" name="resposta" class="form-control" ></textarea>
+                        <input type="hidden" name="id" value="<%= pergunta.id %>">
+                        </div>
+                        <button class="btn btn-primary">Responder</button>
+                    </form>
+                </div> <!--fim do card body -->
+            </div> <!-- final do card-->
+            </div>
+          </div>
+          <% respostas.forEach(resposta => { %> <!--Foreach para imprimir na tela as perguntas-->
+            <div class="card">
+                <h5 class="card-header">Resposta feita por: <%= resposta.usuario %></h5>
+                <div class="card-body">
+                  <p class="card-text"><%= resposta.resposta %></p>
+                </div>
+              </div> 
+        <%});%> 
+          <a href="/" class="btn btn-warning">Retornar</a>
+</div><!--Fecha o container-->
+<%- include('layout/footer.ejs') %>

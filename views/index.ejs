@@ -1,0 +1,17 @@
+<%- include('layout/header.ejs') %> <!-- Incluindo os arquivos do layout -->
+<%- include('layout/navbar.ejs') %>
+<div class="container">
+    <a href="/perguntar" class="btn btn-success">Fazer Pergunta</a>
+    <% perguntas.forEach(pergunta => { %> <!--Foreach para imprimir na tela as perguntas-->
+        <div class="card">
+            <h5 class="card-header">Feita por: <%= pergunta.usuario %></h5>
+            <div class="card-body">
+              <h5 class="card-title"><%= pergunta.titulo %></h5>
+              <p class="card-text"><%= pergunta.descricao %></p>
+              <a href="/responder/<%= pergunta.id %>" class="btn btn-primary">Responder</a>
+            </div>
+          </div> 
+    <%});%>
+
+</div>
+<%- include('layout/footer.ejs') %>

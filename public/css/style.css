@@ -1,0 +1,22 @@
+/*
+* Estilo próprio
+* Andson de Oliveira
+*
+*
+*/
+
+
+/*Card do formulário de pergunta */
+.formcard{
+    margin-top: 5vh; /*Altura da tela, VH proporção como %*/
+}
+/* Logo */
+.navbar-brand{
+    margin-left: 2vh;
+}
+.container{
+    padding: 2vh;;
+}
+.card{
+    margin: 1vh;
+}
